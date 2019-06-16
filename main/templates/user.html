@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card mb-2">
+    <div class="row">
+        <div class="col-md-4 mr-3">
+            <img src="{{ user['icon_img'] }}" alt="" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-md-6 mt-3">
+          <em> <strong><h2>{{ user['name'] }}</h2></strong></em>
+            </i></cite></small>
+            <p>
+                <em>Karma:</em> {{ user['link_karma'] }}
+                <br />
+<!--               TODO: change date to readable form-->
+               <em>Joined date: </em> {{user['created_utc']}}
+                <br>
+                <em>Total scores </em>  {{user['comment_karma']}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<h3 class="mb-3">Posts</h3>
+{% for post in datas %}
+<div class="mb-2">
+    <div class="card">
+        <div class="card-header">
+            <strong>
+                <button class="btn btn-light btn-sm">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                {{ post['data']['score'] }}
+                <button class="btn btn-light btn-sm">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </strong>
+            <span class="">
+                <a class="mr-2" href="#">{{ post['data']['title'] }}</a>
+            </span>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<h3 class="mb-3">Comments</h3>
+{% for comment in datas %}
+<div class="mb-2">
+    <div class="card">
+        <div class="card-header">
+            <strong>
+                <button class="btn btn-light btn-sm">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                {{ comment['data']['score'] }}
+                <button class="btn btn-light btn-sm">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </strong>
+
+            <span class="">
+                <a class="mr-2" href="#">{{ comment['data']['author'] }}</a>
+            </span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <p href="#">{{ comment['data']['body'] }}</p>
+            </h5>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

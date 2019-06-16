@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="card mb-3">
+    <div class="card-header text-muted">
+        <a class="mr-2" href="{{ url_for('user_api.user_api', username=post.author) }}">{{ post.author }}</a>
+        {{post.score}} points
+    </div>
+
+    <div class="card-body">
+        <h3 class="card-title">
+            <div class="article-title" href="{{ url_for('post_api.comments', id=post) }}">{{ post.title }}</div>
+        </h3>
+        <p class="card-text"><em>{{ post.selftext }}    </em></p>
+    </div>
+</div>
+
+{% for comment in comments %}
+    <div class="card mb-1">
+        <div class="text-muted card-header">
+            <a class="mr-2" href="#">{{ comment.author }}</a>
+        </div>
+        <div class="card-body">
+          <strong>  {{ comment.body }} </strong>
+        </div>
+    </div>
+    Replies:
+    {% for com in comment.replies %}
+            <div class="card ml-3 mb-1">
+                <div class="text-muted card-header">
+                    <a class="mr-2" href="#">{{ com.author }}</a>
+                </div>
+                <div class="card-body">
+                   <em> {{ com.body }} </em>
+                </div>
+            </div>
+    {% endfor %}
+{% endfor %}
+
+{% endblock content %}
