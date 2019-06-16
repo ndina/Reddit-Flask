@@ -55,7 +55,7 @@ $ source venv/bin/activate
 ```
 (venv) $ python3 run.py
 ```
-##### Step 5. Finally project will be able at:
+##### Step 5. Finally project will be available at:
 ```
 http://localhost:5000
 ```
