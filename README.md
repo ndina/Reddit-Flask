@@ -64,7 +64,7 @@ http://localhost:5000
 
 ## Testing
 
-Explanation how to run the automated tests for this system
+Explanation how to run the automated tests for this system.
 
 ##### testing using [pytest](https://docs.pytest.org/en/latest/)
 
@@ -96,7 +96,7 @@ $ python -m unittest tests/unittest_sample.py
 
 
 ## Docker
-You can use `docker run` and run your app on any machine with this command:
+You can use `docker run` and run an app on any machine with this command:
 ```
 $ docker run -p 4000:80 dina2505/redditclone
 ```
