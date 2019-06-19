@@ -10,5 +10,4 @@ This key pair is required to use the Reddit API.
 reddit = praw.Reddit(client_id='3zs13CrICvZJsA',
                      client_secret='VtgGXKe80yTxrmdtXnbbbiKR2c8',
                      username='dina2505',
-                     password='Dina1976',
                      user_agent='redditClone',)

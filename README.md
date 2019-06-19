@@ -57,7 +57,7 @@ $ source venv/bin/activate
 ```
 ##### Step 5. Finally project will be able at:
 ```
-http://localhost:5000
+http://localhost:5000/
 ```
 
 
@@ -96,7 +96,7 @@ $ python -m unittest tests/unittest_sample.py
 
 
 ## Docker
-You can use `docker run` and run your app on any machine with this command:
+You can use `docker run` command and run an app on any machine:
 ```
 $ docker run -p 4000:80 dina2505/redditclone
 ```
